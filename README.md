@@ -1,7 +1,5 @@
 # docker-novnc
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/flyqie/docker-novnc.svg)](https://hub.docker.com/r/flyqie/docker-novnc/) [![Docker Automated build](https://img.shields.io/docker/automated/flyqie/docker-novnc.svg)](https://hub.docker.com/r/flyqie/docker-novnc/)
-
 tigervnc, websokify, novnc and Nginx with s6-overlay in a docker image, forked from [oott123/docker-novnc](https://github.com/oott123/docker-novnc).
 
 ## Environment variables
