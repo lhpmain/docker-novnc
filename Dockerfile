@@ -1,7 +1,7 @@
 # 端口规划
 # 9000 - nginx
 # 9001 - websocketify
-# 5901 - tigervnc
+# 5911 - tigervnc
 
 # based on ubuntu 18.04 LTS
 FROM ubuntu:18.04
@@ -51,7 +51,7 @@ RUN groupadd user && useradd -m -g user user && \
 # copy files
 COPY ./docker-root /
 
-EXPOSE 9000/tcp 9001/tcp 5901/tcp
+EXPOSE 9000/tcp 9001/tcp 5911/tcp
 
 ENTRYPOINT ["/init.entrypoint"]
 CMD ["start"]
