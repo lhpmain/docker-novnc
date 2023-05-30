@@ -5,9 +5,9 @@ set -eo pipefail
 [[ $DEBUG == true ]] && set -x
 
 if [ "$USER_PASSWD" != '' ]; then
-    # set user password
-    echo "user:$USER_PASSWD" | chpasswd
-    # and give sudo power to user
-    echo '' >> /etc/sudoers
-    echo 'user  ALL=(ALL:ALL) ALL' >> /etc/sudoers
+	# set user password
+	echo "user:$USER_PASSWD" | chpasswd
+	# and give sudo power to user
+	echo '' >> /etc/sudoers
+	echo 'user  ALL=(ALL:ALL) ALL' >> /etc/sudoers
 fi
