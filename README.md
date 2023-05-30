@@ -12,9 +12,11 @@ tigervnc, websokify, novnc and Nginx with s6-overlay in a docker image, forked f
 
 ## Ports
 
-* **5901** - tigervnc
+* **5911** - tigervnc
 * **9000** - Nginx
 * **9001** - websockify
+
+**Warning: 9001 and 5911 only use VNC_PASSWD for authentication, and it is strongly recommended not to forward these two ports externally most of the time.**
 
 ## Docker Images
 
