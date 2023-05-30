@@ -17,10 +17,6 @@ ENV LANG=en_US.UTF-8 \
 	HTTP_AUTH_USER='' \
 	HTTP_AUTH_PASSWD='' \
 	DEBIAN_FRONTEND=noninteractive
-	
-# 换源
-RUN sed -i 's@//.*archive.ubuntu.com@//mirrors.ustc.edu.cn@g' /etc/apt/sources.list
-RUN sed -i 's/security.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 
 # 首先加用户，防止 uid/gid 不稳定
 RUN groupadd user && useradd -m -g user user && \
