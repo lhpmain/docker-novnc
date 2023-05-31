@@ -4,7 +4,11 @@ set -eo pipefail
 
 [[ $DEBUG == true ]] && set -x
 
-echo -e "$VNC_PASSWD\n$VNC_PASSWD\n\n" | sudo -Hu user vncpasswd
+if [ "$VNC_PASSWD" != '' ]; then
+	# set vnc password
+	echo -e "$VNC_PASSWD\n$VNC_PASSWD\n\n" | sudo -Hu user vncpasswd
+fi
+
 if [ ! -d /etc/vnc ]; then
 	mkdir /etc/vnc
 fi
