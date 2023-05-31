@@ -3,7 +3,6 @@ set -eo pipefail
 
 [[ $DEBUG == true ]] && set -x
 
-export VNC_PASSWORD=''
 export DISPLAY=:11
 
 case ${1} in
