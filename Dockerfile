@@ -23,10 +23,11 @@ RUN groupadd user && useradd -m -g user user && \
 	# 安装依赖和代码
 	apt-get update && apt-get upgrade -y && \
 	apt-get install -y \
-		git \
+		git zip unzip \
 		ca-certificates wget locales \
 		nginx sudo apache2-utils \
-		xorg openbox python3 python3-pip rxvt-unicode && \
+		xorg openbox python stalonetray \
+		python3 python3-pip rxvt-unicode && \
 	pip3 install numpy && \
 	# s6-overlay@v1.22.1.0
 	wget -O - https://github.com/just-containers/s6-overlay/releases/download/v1.22.1.0/s6-overlay-amd64.tar.gz | tar -xzv && \
