@@ -43,4 +43,5 @@ jobs:
           file: ./Dockerfile.arm64
           platforms: linux/arm64
           push: true
-          tags: flyqie/docker-novnc:latest-arm64
+          tags: 
+            - flyqie/docker-novnc:latest-arm64
