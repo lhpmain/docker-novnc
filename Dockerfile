@@ -34,10 +34,9 @@ RUN groupadd user && useradd -m -g user user && \
 	# workaround for https://github.com/just-containers/s6-overlay/issues/158
 	ln -s /init /init.entrypoint && \
 	# tigervnc@v1.10.1
-	wget -O /tmp/tigervnc.tar.gz https://sourceforge.net/projects/tigervnc/files/stable/1.10.1/tigervnc-1.10.1.x86_64.tar.gz/download && \
-	tar xzf /tmp/tigervnc.tar.gz -C /tmp && \
-	chown root:root -R /tmp/tigervnc-1.10.1.x86_64 && \
-	tar c -C /tmp/tigervnc-1.10.1.x86_64 usr | tar x -C / && \
+	wget -O /tmp/tigervncserver.deb https://sourceforge.net/projects/tigervnc/files/stable/1.13.1/ubuntu-18.04LTS/amd64/tigervncserver_1.13.1-1ubuntu1_amd64.deb/download && \
+	((dpkg -i /tmp/tigervncserver.deb) || true) && \
+	apt-get install -f -y && \
 	locale-gen en_US.UTF-8 && \
 	mkdir -p /app/src && \
 	# novnc@v1.4.0
@@ -51,6 +50,9 @@ RUN groupadd user && useradd -m -g user user && \
 
 # copy files
 COPY ./docker-root /
+
+ADD vncserver /usr/bin/
+RUN chmod +x /usr/bin/vncserver
 
 EXPOSE 9000/tcp 9001/tcp 5911/tcp
 
