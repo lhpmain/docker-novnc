@@ -33,7 +33,7 @@ RUN groupadd user && useradd -m -g user user && \
 	wget -O - https://github.com/just-containers/s6-overlay/releases/download/v1.22.1.0/s6-overlay-amd64.tar.gz | tar -xzv && \
 	# workaround for https://github.com/just-containers/s6-overlay/issues/158
 	ln -s /init /init.entrypoint && \
-	# tigervnc@v1.10.1
+	# tigervnc@v1.13.1
 	wget -O /tmp/tigervncserver.deb https://sourceforge.net/projects/tigervnc/files/stable/1.13.1/ubuntu-18.04LTS/amd64/tigervncserver_1.13.1-1ubuntu1_amd64.deb/download && \
 	((dpkg -i /tmp/tigervncserver.deb) || true) && \
 	apt-get install -f -y && \

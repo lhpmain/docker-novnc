@@ -20,7 +20,9 @@ tigervnc, websokify, novnc and Nginx with s6-overlay in a docker image, forked f
 
 ## Docker Images
 
-* **`./Dockerfile`** - based on Ubuntu18.04, DockerHub tag `latest`
+* **`./Dockerfile.amd64`** - based on Ubuntu18.04 amd64, DockerHub tag `latest` and `latest-amd64`
+
+* **`./Dockerfile.arm64`** - based on Ubuntu18.04 arm64, DockerHub tag `latest-arm64`
 
 ## Add your foreground process
 
