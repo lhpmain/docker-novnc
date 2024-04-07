@@ -25,15 +25,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
-        name: Build and push amd64
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          file: ./Dockerfile.amd64
-          platforms: linux/amd64
-          push: true
-          tags: flyqie/docker-novnc:latest, flyqie/docker-novnc:latest-amd64
-      -
         name: Build and push arm64
         uses: docker/build-push-action@v4
         with:
@@ -42,3 +33,12 @@ jobs:
           platforms: linux/arm64
           push: true
           tags: flyqie/docker-novnc:latest-arm64
+      -
+        name: Build and push amd64
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile.amd64
+          platforms: linux/amd64
+          push: true
+          tags: flyqie/docker-novnc:latest, flyqie/docker-novnc:latest-amd64
