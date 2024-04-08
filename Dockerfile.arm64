@@ -42,7 +42,6 @@ RUN groupadd user && useradd -m -g user user && \
 	git clone --depth=1 --branch v1.4.0 https://github.com/novnc/noVNC.git /app/src/novnc && \
 	# novnc@v0.11.0
 	git clone --depth=1 --branch v0.11.0 https://github.com/novnc/websockify.git /app/src/websockify && \
-	apt-get purge -y git wget && \
 	apt-get autoremove -y && \
 	apt-get clean && \
 	rm -fr /tmp/* /app/src/novnc/.git /app/src/websockify/.git /var/lib/apt/lists
