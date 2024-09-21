@@ -1,0 +1,12 @@
+#!/command/with-contenv /bin/bash
+
+set -eo pipefail
+
+[[ $DEBUG == true ]] && set -x
+
+if [ "$HTTP_AUTH_USER" != '' ] && [ "$HTTP_AUTH_PASSWD" != '' ]; then
+	# set user password
+	htpasswd -nbm "$HTTP_AUTH_USER" "$HTTP_AUTH_PASSWD" > /etc/nginx/novnc_http_auth.info
+	# enable http basic auth
+	sed -i 's/#\[NGINX_HTTP_AUTH_FLAG\]//' /etc/nginx/nginx.conf
+fi

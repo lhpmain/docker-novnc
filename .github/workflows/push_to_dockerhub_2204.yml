@@ -1,4 +1,4 @@
-name: push_to_dockerhub_1804
+name: push_to_dockerhub_2204
 
 on:
   push:
@@ -29,16 +29,16 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./Dockerfile.arm64
+          file: ./Dockerfile.arm64-2204
           platforms: linux/arm64
           push: true
-          tags: flyqie/docker-novnc:latest-arm64, flyqie/docker-novnc:arm64
+          tags: flyqie/docker-novnc:latest-arm64-2204, flyqie/docker-novnc:arm64-2204
       -
         name: Build and push amd64
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: ./Dockerfile.amd64
+          file: ./Dockerfile.amd64-2204
           platforms: linux/amd64
           push: true
-          tags: flyqie/docker-novnc:latest, flyqie/docker-novnc:latest-amd64, flyqie/docker-novnc:amd64
+          tags: flyqie/docker-novnc:latest-2204, flyqie/docker-novnc:latest-amd64-2204, flyqie/docker-novnc:amd64-2204
