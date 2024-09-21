@@ -35,8 +35,7 @@ RUN groupadd user && useradd -m -g user user && \
 	ln -s /init /init.entrypoint && \
 	# tigervnc@v1.13.1
 	wget -O /tmp/tigervncserver.deb https://sourceforge.net/projects/tigervnc/files/stable/1.13.1/ubuntu-18.04LTS/amd64/tigervncserver_1.13.1-1ubuntu1_amd64.deb/download && \
-	((dpkg -i /tmp/tigervncserver.deb) || true) && \
-	apt-get install -f -y && \
+	apt-get install -f -y /tmp/tigervncserver.deb && \
 	locale-gen en_US.UTF-8 && \
 	mkdir -p /app/src && \
 	# novnc@v1.4.0
@@ -48,10 +47,10 @@ RUN groupadd user && useradd -m -g user user && \
 	rm -fr /tmp/* /app/src/novnc/.git /app/src/websockify/.git /var/lib/apt/lists
 
 # copy files
-COPY ./docker-root /
-
-ADD vncserver /usr/bin/
-RUN chmod +x /usr/bin/vncserver
+COPY ./docker-root /tmp/tmp-docker-root
+RUN chmod -R 755 /tmp/tmp-docker-root
+RUN /bin/bash -c "shopt -s dotglob; cp -rf /tmp/tmp-docker-root/* /"
+RUN rm -rf /tmp/tmp-docker-root
 
 EXPOSE 9000/tcp 9001/tcp 5911/tcp
 
