@@ -24,6 +24,10 @@ tigervnc, websokify, novnc and Nginx with s6-overlay in a docker image, forked f
 
 * **`./Dockerfile.arm64`** - based on Ubuntu18.04 arm64, DockerHub tag `latest-arm64`/`arm64`
 
+* **`./Dockerfile.amd64-2404`** - based on Ubuntu20.04 amd64, DockerHub tag `latest-2004`/`latest-amd64-2004`/`amd64-2004`
+
+* **`./Dockerfile.arm64-2404`** - based on Ubuntu20.04 arm64, DockerHub tag `latest-arm64-2004`/`arm64-2004`
+
 * **`./Dockerfile.amd64-2204`** - based on Ubuntu22.04 amd64, DockerHub tag `latest-2204`/`latest-amd64-2204`/`amd64-2204`
 
 * **`./Dockerfile.arm64-2204`** - based on Ubuntu22.04 arm64, DockerHub tag `latest-arm64-2204`/`arm64-2204`
