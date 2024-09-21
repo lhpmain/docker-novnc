@@ -28,6 +28,10 @@ tigervnc, websokify, novnc and Nginx with s6-overlay in a docker image, forked f
 
 * **`./Dockerfile.arm64-2204`** - based on Ubuntu22.04 arm64, DockerHub tag `latest-arm64-2204`/`arm64-2204`
 
+* **`./Dockerfile.amd64-2404`** - based on Ubuntu24.04 amd64, DockerHub tag `latest-2404`/`latest-amd64-2404`/`amd64-2404`
+
+* **`./Dockerfile.arm64-2404`** - based on Ubuntu24.04 arm64, DockerHub tag `latest-arm64-2404`/`arm64-2404`
+
 ## Add your foreground process
 
 `vncmain.sh` is a file which is a placeholder for foreground process running in VNC.
