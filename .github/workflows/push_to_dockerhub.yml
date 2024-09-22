@@ -32,7 +32,7 @@ jobs:
           file: ./Dockerfile.arm64
           platforms: linux/arm64
           push: true
-          tags: flyqie/docker-novnc:latest-arm64, flyqie/docker-novnc:arm64
+          tags: dockerguiimages/docker-novnc:latest-arm64, dockerguiimages/docker-novnc:arm64
       -
         name: Build and push amd64
         uses: docker/build-push-action@v4
@@ -41,4 +41,4 @@ jobs:
           file: ./Dockerfile.amd64
           platforms: linux/amd64
           push: true
-          tags: flyqie/docker-novnc:latest, flyqie/docker-novnc:latest-amd64, flyqie/docker-novnc:amd64
+          tags: dockerguiimages/docker-novnc:latest, dockerguiimages/docker-novnc:latest-amd64, dockerguiimages/docker-novnc:amd64

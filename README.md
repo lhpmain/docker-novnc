@@ -43,7 +43,7 @@ tigervnc, websokify, novnc and Nginx with s6-overlay in a docker image, forked f
 You can write a Dockerfile like this:
 
 ```Dockerfile
-FROM flyqie/docker-novnc:latest
+FROM dockerguiimages/docker-novnc:latest
 COPY vncmain.sh /app/vncmain.sh
 ```
 
