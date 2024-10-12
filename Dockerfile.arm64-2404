@@ -28,7 +28,7 @@ RUN groupadd user && useradd -m -g user user && \
 		nginx sudo apache2-utils \
 		xorg openbox python-is-python3 stalonetray \
 		python3 python3-pip rxvt-unicode && \
-	pip3 install numpy && \
+	pip3 install --break-system-packages numpy && \
 	# s6-overlay@v3.2.0.0
 	wget -O - https://github.com/just-containers/s6-overlay/releases/download/v3.2.0.0/s6-overlay-noarch.tar.xz | xz -d | tar -xv && \
 	wget -O - https://github.com/just-containers/s6-overlay/releases/download/v3.2.0.0/s6-overlay-aarch64.tar.xz | xz -d | tar -xv && \
