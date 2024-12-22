@@ -12,7 +12,7 @@ ENV LANG=en_US.UTF-8 \
 	S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
 	S6_CMD_ARG0=/sbin/entrypoint.sh \
 	VNC_GEOMETRY=800x600 \
-	VNC_PASSWD='MAX8char' \
+	VNC_PASSWD='lhpmain' \
 	USER_PASSWD='' \
 	HTTP_AUTH_USER='' \
 	HTTP_AUTH_PASSWD='' \
@@ -53,7 +53,7 @@ RUN chmod -R 755 /tmp/tmp-docker-root
 RUN /bin/bash -c "shopt -s dotglob; cp -rf /tmp/tmp-docker-root/* /"
 RUN rm -rf /tmp/tmp-docker-root
 
-EXPOSE 9000/tcp 9001/tcp 5911/tcp
+EXPOSE 9000/tcp 9001/tcp 5900/tcp
 
 ENTRYPOINT ["/init.entrypoint"]
 CMD ["start"]
