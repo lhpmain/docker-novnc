@@ -1,9 +1,11 @@
-name: push_to_dockerhub_2204
+# name: push_to_dockerhub_2204
+# on:
+#  push:
+#     branches:
+#       - "main"
 
-on:
-  push:
-    branches:
-      - 'master'
+name: push_to_dockerhub_2204
+on: [workflow_dispatch]
 
 jobs:
   docker:
